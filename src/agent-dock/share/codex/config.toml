@@ -1,0 +1,7 @@
+approval_policy = "never"
+sandbox_mode = "danger-full-access"
+
+web_search = "live"
+
+[projects."${PWD}"]
+trust_level = "trusted"

@@ -1,0 +1,1 @@
+alias gemini='gemini --yolo'
