@@ -1,0 +1,2 @@
+export COPILOT_ALLOW_ALL=true
+export COPILOT_AUTO_UPDATE=false
