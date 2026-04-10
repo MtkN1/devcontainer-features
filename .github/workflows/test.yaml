@@ -22,7 +22,7 @@ jobs:
             if [ -f "$feature_dir/devcontainer-feature.json" ]; then
               basename "$feature_dir"
             fi
-          done | jq -R . | jq -s .)
+          done | jq -R . | jq -sc .)
 
           echo "features=$features_json" >> "$GITHUB_OUTPUT"
 
