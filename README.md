@@ -1,41 +1,22 @@
-# devcontainer-features
+# Agent Dock
 
-## Agent Dock
+Installs AI agent CLIs into your dev container.
 
-Installs AI coding agent CLIs into your dev container.
-
-| Tool | Default |
+| Tool | Feature ID |
 |------|---------|
-| [Claude Code](https://github.com/anthropics/claude-code) | ✓ |
-| [Codex CLI](https://github.com/openai/codex) | ✓ |
-| [Gemini CLI](https://github.com/google-gemini/gemini-cli) | ✓ |
-| [GitHub Copilot CLI](https://github.com/github/copilot.vim) | ✓ |
+| [Claude Code](https://code.claude.com/docs/en/overview) | |
+| [Codex CLI](https://developers.openai.com/codex) | |
+| [Gemini CLI](https://geminicli.com/docs/) | |
+| [GitHub Copilot CLI](https://docs.github.com/en/copilot/how-tos/copilot-cli) | `copilot` |
 
-Credentials are stored in a shared Docker volume (`agent-dock`). This lets you reuse credentials across containers without re-logging in each time.
-
-#### Usage
+## Usage
 
 Add to your `devcontainer.json`:
 
 ```json
 {
   "features": {
-    "ghcr.io/mtkn1/devcontainer-features/agent-dock:0": {}
-  }
-}
-```
-
-#### Options
-
-```json
-{
-  "features": {
-    "ghcr.io/mtkn1/devcontainer-features/agent-dock:0": {
-      "installClaudeCode": true,
-      "installCodexCli": true,
-      "installGeminiCli": true,
-      "installGitHubCopilotCli": true
-    }
+    "ghcr.io/mtkn1/agent-dock/copilot:0": {}
   }
 }
 ```
