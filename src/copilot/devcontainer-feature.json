@@ -1,0 +1,26 @@
+{
+	"id": "copilot",
+	"version": "0.0.1",
+	"name": "GitHub Copilot CLI",
+	"customizations": {
+		"vscode": {
+			"settings": {
+				"terminal.integrated.env.linux": {
+					"COPILOT_EDITOR": "code --wait"
+				}
+			}
+		}
+	},
+	"mounts": [
+		{
+			"source": "agent-dock-copilot-${devcontainerId}",
+			"target": "/mnt/agent-dock/.copilot",
+			"type": "volume"
+		}
+	],
+	"updateContentCommand": [
+		"/usr/bin/env",
+		"bash",
+		"/mnt/agent-dock/lib/copilot/setup.sh"
+	]
+}

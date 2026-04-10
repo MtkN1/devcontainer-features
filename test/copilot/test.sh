@@ -40,10 +40,6 @@ source dev-container-features-test-lib
 # Feature-specific tests
 # The 'check' command comes from the dev-container-features-test-lib. Syntax is...
 # check <LABEL> <cmd> [args...]
-check "mise" mise --version
-check "claude" claude --version
-check "codex" codex --version
-check "gemini" gemini --version
 check "copilot" copilot --version
 
 # Report results
