@@ -1,6 +1,6 @@
 {
 	"id": "copilot",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"name": "GitHub Copilot CLI",
 	"containerEnv": {
 		"COPILOT_ALLOW_ALL": "true",
@@ -12,6 +12,11 @@
 		{
 			"source": "agent-dock-copilot-${devcontainerId}",
 			"target": "/mnt/agent-dock/.copilot",
+			"type": "volume"
+		},
+		{
+			"source": "agent-dock-copilot-bin",
+			"target": "/mnt/agent-dock/libexec/copilot",
 			"type": "volume"
 		}
 	],
