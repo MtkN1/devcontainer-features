@@ -1,6 +1,6 @@
 {
 	"id": "copilot",
-	"version": "0.0.2",
+	"version": "0.0.3",
 	"name": "GitHub Copilot CLI",
 	"containerEnv": {
 		"COPILOT_ALLOW_ALL": "true",
