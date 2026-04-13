@@ -1,4 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-curl -fsSL https://gh.io/copilot-install | bash
+AGENT_DOCK_HOME="${AGENT_DOCK_HOME:-/mnt/agent-dock}"
+
+# Detect architecture
+case "$(uname -m)" in
+  x86_64|amd64) ARCH="x64" ;;
+  aarch64|arm64) ARCH="arm64" ;;
+  *) exit 1 ;;
+esac
+
+PREFIX="${AGENT_DOCK_HOME}/libexec/copilot/linux-${ARCH}"
+
+if [[ ! -x "${PREFIX}/bin/copilot" ]]; then
+  curl -fsSL https://gh.io/copilot-install | PATH="${PREFIX}/bin:${PATH}" PREFIX="${PREFIX}" bash
+fi
+
+mkdir -p ~/.local/bin
+ln -sf "${PREFIX}/bin/copilot" ~/.local/bin/copilot

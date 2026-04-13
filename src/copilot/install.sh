@@ -7,7 +7,8 @@ AGENT_DOCK_HOME="${AGENT_DOCK_HOME:-/mnt/agent-dock}"
 
 mkdir -p -m 1777 \
   "${AGENT_DOCK_HOME}/.copilot" \
-  "${AGENT_DOCK_HOME}/lib/copilot"
+  "${AGENT_DOCK_HOME}/lib/copilot" \
+  "${AGENT_DOCK_HOME}/libexec/copilot"
 
 cp -a \
   ./lib/. \

@@ -13,6 +13,11 @@
 			"source": "agent-dock-copilot-${devcontainerId}",
 			"target": "/mnt/agent-dock/.copilot",
 			"type": "volume"
+		},
+		{
+			"source": "agent-dock-copilot-bin",
+			"target": "/mnt/agent-dock/libexec/copilot",
+			"type": "volume"
 		}
 	],
 	"updateContentCommand": [
