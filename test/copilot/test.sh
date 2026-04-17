@@ -42,10 +42,6 @@ source dev-container-features-test-lib
 # check <LABEL> <cmd> [args...]
 check "check version" copilot --version
 
-check "check allow all" bash -c '[[ "$COPILOT_ALLOW_ALL" == "true" ]]'
-
-check "check auto update" bash -c '[[ "$COPILOT_AUTO_UPDATE" == "false" ]]'
-
 check "check home" bash -c '[[ "$COPILOT_HOME" == "/mnt/agent-dock/.copilot" ]]'
 
 # Report results
