@@ -13,8 +13,13 @@ esac
 PREFIX="${AGENT_DOCK_HOME}/libexec/copilot/linux-${ARCH}"
 
 if [[ ! -x "${PREFIX}/bin/copilot" ]]; then
-  curl -fsSL https://gh.io/copilot-install | PATH="${PREFIX}/bin:${PATH}" PREFIX="${PREFIX}" bash
+  curl -fsSL https://gh.io/copilot-install | PATH="${PREFIX}/bin:/bin:/usr/bin" PREFIX="${PREFIX}" bash
 fi
 
 mkdir -p ~/.local/bin
-ln -sf "${PREFIX}/bin/copilot" ~/.local/bin/copilot
+cat > ~/.local/bin/copilot \
+<< EOF
+#!/bin/sh
+"${PREFIX}/bin/copilot" --allow-all --enable-all-github-mcp-tools "\$@"
+EOF
+chmod +x ~/.local/bin/copilot
